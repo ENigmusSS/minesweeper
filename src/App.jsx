@@ -26,7 +26,7 @@ function App() {
         {
           timer.current = setInterval(() => {
             setTime(prevState => prevState + 1);
-          }, 1000);
+          }, 10);
         }
         break;
       case "victory":
