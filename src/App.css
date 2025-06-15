@@ -1,21 +1,96 @@
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
+  height: fit-content;
+  width: fit-content;
+  border: darkred 2px outset;
+  box-shadow: 0 0 5px 5px darkred;
+  margin: auto auto;
+}
+
+.Panel {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.Field {
+  display: flex;
+  flex-direction: column;
+  border: darkred 2px outset;
+  box-shadow: 0 0 5px 5px darkred;
+  margin: 20px auto;
+  width: 90%;
+  align-content: space-around;
+  vertical-align: center;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: space-around;
+}
+
+.cell {
+  background-color: black;
+  border: 2px black outset;
+  width: 45px;
+  height: 45px;
+}
+
+.flagged {
+  background-image: url("target.svg");
+  background-size: 45px 45px;
+  box-shadow: 0 0 2px 2px orangered;
+}
+
+.open {
+  background-color: dimgray;
+  border: 2px black inset;
+}
+
+.fired {
+  background-color: darkred;
+  background-image: url("fired.svg");
+  background-size: 45px 45px ;
+  border: 2px darkred inset;
+  box-shadow: 0 0 2px 2px darkred;
+}
+
+.panel-element {
+  width: 30%;
+}
+
+.button {
+  border: red 2px outset;
+  box-shadow: 0 0 5px 5px red;
+  background-color: darkred;
+  font-family: "Sixtyfour Convergence", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: calc(10px + 2vmin);
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 10s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  height: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
