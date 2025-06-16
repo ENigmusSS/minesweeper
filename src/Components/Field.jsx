@@ -36,18 +36,18 @@ export const Field = ({
     if (newBoard[y][x].isFlagged) setFlags(prevState => prevState - 1);
     else setFlags(prevState => prevState + 1);
     setBoard(newBoard);
-    if (board.every(cell => cell.isFlagged && cell.isMined))
+    if (
+      newBoard.every(row => row.every(cell => cell.isFlagged === cell.isMined))
+    ) {
       setGameStatus("victory");
+    }
   }
 
   function openCell(x, y) {
     if (gameStatus === "beforeStart") setGameStatus("running");
     let newBoard = JSON.parse(JSON.stringify(board));
     setBoard(openCellRecursive(newBoard, x, y));
-    if (board.every(cell => cell.isFlagged && cell.isMined))
-      setGameStatus("victory");
   }
-
   function openCellRecursive(newBoard, x, y) {
     const cell = newBoard[y][x];
     cell.isOpen = true;
